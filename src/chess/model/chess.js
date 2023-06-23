@@ -1,10 +1,14 @@
-import Chess from 'chess.js'
+import { Chess } from 'chess.js'
 import ChessPiece from './chesspiece'
 import Square from './square'
 // when indexing, remember: [y][x]. 
 /**
  * If the player color is black, make sure to invert the board.
  */
+
+
+
+
 class Game {
     constructor(thisPlayersColorIsWhite) {
         this.thisPlayersColorIsWhite = thisPlayersColorIsWhite // once initialized, this value should never change.

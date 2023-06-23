@@ -50,19 +50,16 @@ function App() {
     <ColorContext.Provider value = {{didRedirect: didRedirect, playerDidRedirect: playerDidRedirect, playerDidNotRedirect: playerDidNotRedirect}}>
       <Router>
         <Routes>
-          <Route path = "/" exact>
-            <Onboard setUserName = {setUserName}/>
-          </Route>
-          <Route path = "/game/:gameid" exact>
-            {didRedirect ? 
-              <React.Fragment>
-                    <JoinGame userName = {userName} isCreator = {true} />
-                    <ChessGame myUserName = {userName} />
-              </React.Fragment> 
-              :
-              <JoinRoom />}
-          </Route>
-          <Navigate to = "/" />
+          <Route path="/" element={<Onboard setUserName={setUserName} />} />
+          <Route path="/game/:gameid" element={didRedirect ? (
+            <>
+              <JoinGame userName={userName} isCreator={true} />
+              <ChessGame myUserName={userName} />
+            </>
+          ) : (
+            <JoinRoom />
+          )} />
+          <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
     </ColorContext.Provider>);
