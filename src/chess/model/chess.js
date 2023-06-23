@@ -5,10 +5,6 @@ import Square from './square'
 /**
  * If the player color is black, make sure to invert the board.
  */
-
-
-
-
 class Game {
     constructor(thisPlayersColorIsWhite) {
         this.thisPlayersColorIsWhite = thisPlayersColorIsWhite // once initialized, this value should never change.
